@@ -84,17 +84,12 @@ clang++ hello.o -o hello
 | `./`    | Run from the current directory (the OS won't find it otherwise since `.` is not in `PATH` by default) |
 | `hello` | The executable produced by the linker                                                                 |
 
-┌───────────────┬───────────┬─────────┬───────────┐
-│ Stage │ Input │ Output │ Flag │
-├───────────────┼───────────┼─────────┼───────────┤
-│ Preprocessing │ hello.cpp │ hello.i │ -E │
-├───────────────┼───────────┼─────────┼───────────┤
-│ Compilation │ hello.i │ hello.s │ -S │
-├───────────────┼───────────┼─────────┼───────────┤
-│ Assembly │ hello.s │ hello.o │ -c │
-├───────────────┼───────────┼─────────┼───────────┤
-│ Linking │ hello.o │ hello │ (default) │
-└───────────────┴───────────┴─────────┴───────────┘
+| Stage | Input | Output | Flag |
+|---------------|-----------|---------|-----------|
+| Preprocessing | hello.cpp | hello.i | `-E` |
+| Compilation | hello.i | hello.s | `-S` |
+| Assembly | hello.s | hello.o | `-c` |
+| Linking | hello.o | hello | (default) |
 
 ### One-shot compile and run
 
